@@ -10,14 +10,20 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const nav = [
+type NavItem = {
+  label: string;
+  to: "/" | "/staff" | "/company-vault" | "/personnel-vault" | "/settings";
+  icon: typeof LayoutDashboard;
+  exact?: boolean;
+};
+
+const nav: NavItem[] = [
   { label: "Dashboard", to: "/", icon: LayoutDashboard, exact: true },
-  { label: "Clients", to: "/", icon: Users, exact: true, hidden: true },
   { label: "Staff", to: "/staff", icon: UserCircle2 },
   { label: "Company Vault", to: "/company-vault", icon: Building2 },
   { label: "Personnel Vault", to: "/personnel-vault", icon: IdCard },
   { label: "Settings", to: "/settings", icon: Settings },
-] as const;
+];
 
 export function AppSidebar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
