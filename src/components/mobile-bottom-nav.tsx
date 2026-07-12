@@ -2,13 +2,20 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { LayoutDashboard, UserCircle2, Building2, IdCard, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const items = [
+type Item = {
+  label: string;
+  to: "/" | "/staff" | "/company-vault" | "/personnel-vault" | "/settings";
+  icon: typeof LayoutDashboard;
+  exact?: boolean;
+};
+
+const items: Item[] = [
   { label: "Home", to: "/", icon: LayoutDashboard, exact: true },
   { label: "Staff", to: "/staff", icon: UserCircle2 },
   { label: "Company", to: "/company-vault", icon: Building2 },
   { label: "Personnel", to: "/personnel-vault", icon: IdCard },
   { label: "Settings", to: "/settings", icon: Settings },
-] as const;
+];
 
 export function MobileBottomNav() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
