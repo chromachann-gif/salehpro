@@ -48,9 +48,7 @@ export function AppSidebar() {
       </div>
 
       <nav className="flex-1 space-y-1 px-3 py-4">
-        {nav
-          .filter((n) => !("hidden" in n) || !n.hidden)
-          .map(({ label, to, icon: Icon, exact }) => {
+        {nav.map(({ label, to, icon: Icon, exact }) => {
             const active = exact ? pathname === to : pathname.startsWith(to);
             return (
               <Link
