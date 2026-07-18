@@ -25,7 +25,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Client Companies · PRO Vault" },
+      { title: "PRO Vault" },
       {
         name: "description",
         content:

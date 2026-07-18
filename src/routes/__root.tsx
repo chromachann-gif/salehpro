@@ -81,32 +81,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PRO Vault — UAE Document & Company Management CRM" },
+      { title: "PRO Vault" },
       {
         name: "description",
         content:
-          "Premium dark-mode CRM for UAE PRO service agents. Track trade licenses, personnel documents, and company certificates for every corporate client.",
+          "All registered corporate clients with license status, trade license expiry, and contact details at a glance.",
       },
       { name: "author", content: "PRO Vault" },
       { name: "theme-color", content: "#0B0E14" },
-      { property: "og:title", content: "PRO Vault — UAE Document & Company Management CRM" },
+      { property: "og:title", content: "PRO Vault" },
       {
         property: "og:description",
         content:
-          "Track trade licenses, visas, Emirates IDs and company certificates in one premium dark workspace built for UAE PRO service agents.",
+          "All registered corporate clients with license status, trade license expiry, and contact details at a glance.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "PRO Vault — UAE Document & Company Management CRM" },
+      { name: "twitter:title", content: "PRO Vault" },
       {
         name: "twitter:description",
         content:
-          "Premium dark CRM for UAE PRO service agents: trade licenses, personnel documents, company certificates.",
+          "All registered corporate clients with license status, trade license expiry, and contact details at a glance.",
       },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/b9101065-dab0-4f09-a1dd-eb817f02fe11" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/b9101065-dab0-4f09-a1dd-eb817f02fe11" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://rsms.me" },
       { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
     ],
