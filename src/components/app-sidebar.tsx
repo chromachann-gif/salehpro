@@ -6,18 +6,20 @@ import {
   IdCard,
   Settings,
   ShieldCheck,
+  FileText,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type NavItem = {
   label: string;
-  to: "/" | "/staff" | "/company-vault" | "/personnel-vault" | "/settings";
+  to: "/" | "/staff" | "/company-vault" | "/personnel-vault" | "/documents" | "/settings";
   icon: typeof LayoutDashboard;
   exact?: boolean;
 };
 
 const nav: NavItem[] = [
   { label: "Dashboard", to: "/", icon: LayoutDashboard, exact: true },
+  { label: "Documents", to: "/documents", icon: FileText },
   { label: "Staff", to: "/staff", icon: UserCircle2 },
   { label: "Company Vault", to: "/company-vault", icon: Building2 },
   { label: "Personnel Vault", to: "/personnel-vault", icon: IdCard },
