@@ -145,16 +145,23 @@ function ClientsPage() {
         <EmptyState />
       ) : view === "grid" ? (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((c) => (
-            <CompanyCard key={c.id} company={c} />
+          {filtered.map((c, i) => (
+            <div
+              key={c.id}
+              className="animate-enter"
+              style={{ animationDelay: `${Math.min(i, 12) * 40}ms` }}
+            >
+              <CompanyCard company={c} />
+            </div>
           ))}
         </div>
       ) : (
-        <div className="overflow-hidden rounded-xl border border-border bg-card">
+        <div className="overflow-hidden rounded-xl border border-border bg-card animate-enter">
           {filtered.map((c, i) => (
             <CompanyRow key={c.id} company={c} divider={i < filtered.length - 1} />
           ))}
         </div>
+
       )}
     </div>
   );
@@ -164,11 +171,10 @@ function CompanyCard({ company }: { company: Company }) {
   return (
     <article
       className={cn(
-        "group card-elevated relative p-5",
-        "transition-all duration-200",
-        "motion-safe:hover:-translate-y-0.5 hover:border-[color:var(--gold)]/40 hover:shadow-[0_10px_24px_-8px_rgba(0,0,0,0.6)]",
+        "group card-elevated gold-glow-hover relative h-full p-5",
       )}
     >
+
       <div className="flex items-start gap-4">
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[color:var(--gold)]/25 to-[color:var(--gold)]/5 ring-1 ring-inset ring-[color:var(--gold)]/30">
           <Building2 className="h-6 w-6 text-[color:var(--gold)]" strokeWidth={1.75} />
