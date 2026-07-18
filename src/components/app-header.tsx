@@ -5,10 +5,12 @@ import { cn } from "@/lib/utils";
 
 const breadcrumbLabels: Record<string, string> = {
   "/": "Dashboard",
+  "/documents": "Documents",
   "/staff": "Staff",
   "/company-vault": "Company Vault",
   "/personnel-vault": "Personnel Vault",
   "/settings": "Settings",
+  "/auth": "Sign in",
 };
 
 export function AppHeader() {

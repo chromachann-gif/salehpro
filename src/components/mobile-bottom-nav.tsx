@@ -1,17 +1,17 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { LayoutDashboard, UserCircle2, Building2, IdCard, Settings } from "lucide-react";
+import { LayoutDashboard, Building2, IdCard, Settings, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Item = {
   label: string;
-  to: "/" | "/staff" | "/company-vault" | "/personnel-vault" | "/settings";
+  to: "/" | "/documents" | "/company-vault" | "/personnel-vault" | "/settings";
   icon: typeof LayoutDashboard;
   exact?: boolean;
 };
 
 const items: Item[] = [
   { label: "Home", to: "/", icon: LayoutDashboard, exact: true },
-  { label: "Staff", to: "/staff", icon: UserCircle2 },
+  { label: "Docs", to: "/documents", icon: FileText },
   { label: "Company", to: "/company-vault", icon: Building2 },
   { label: "Personnel", to: "/personnel-vault", icon: IdCard },
   { label: "Settings", to: "/settings", icon: Settings },
