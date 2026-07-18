@@ -14,7 +14,173 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      companies: {
+        Row: {
+          address: string | null
+          created_at: string
+          email: string | null
+          id: string
+          license_number: string | null
+          name: string
+          phone: string | null
+          status: string
+          trade_license_expiry: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          license_number?: string | null
+          name: string
+          phone?: string | null
+          status?: string
+          trade_license_expiry?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          license_number?: string | null
+          name?: string
+          phone?: string | null
+          status?: string
+          trade_license_expiry?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      documents: {
+        Row: {
+          company_id: string | null
+          created_at: string
+          doc_number: string | null
+          doc_type: string | null
+          expiry_date: string | null
+          extracted: Json | null
+          holder_name: string | null
+          id: string
+          issue_date: string | null
+          mime_type: string | null
+          nationality: string | null
+          original_filename: string | null
+          personnel_id: string | null
+          processing_error: string | null
+          processing_status: string
+          scope: string
+          status: string | null
+          storage_path: string
+          summary: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company_id?: string | null
+          created_at?: string
+          doc_number?: string | null
+          doc_type?: string | null
+          expiry_date?: string | null
+          extracted?: Json | null
+          holder_name?: string | null
+          id?: string
+          issue_date?: string | null
+          mime_type?: string | null
+          nationality?: string | null
+          original_filename?: string | null
+          personnel_id?: string | null
+          processing_error?: string | null
+          processing_status?: string
+          scope: string
+          status?: string | null
+          storage_path: string
+          summary?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company_id?: string | null
+          created_at?: string
+          doc_number?: string | null
+          doc_type?: string | null
+          expiry_date?: string | null
+          extracted?: Json | null
+          holder_name?: string | null
+          id?: string
+          issue_date?: string | null
+          mime_type?: string | null
+          nationality?: string | null
+          original_filename?: string | null
+          personnel_id?: string | null
+          processing_error?: string | null
+          processing_status?: string
+          scope?: string
+          status?: string | null
+          storage_path?: string
+          summary?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "documents_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "documents_personnel_id_fkey"
+            columns: ["personnel_id"]
+            isOneToOne: false
+            referencedRelation: "personnel"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      personnel: {
+        Row: {
+          company_id: string | null
+          created_at: string
+          flag: string | null
+          full_name: string
+          id: string
+          nationality: string | null
+          user_id: string
+        }
+        Insert: {
+          company_id?: string | null
+          created_at?: string
+          flag?: string | null
+          full_name: string
+          id?: string
+          nationality?: string | null
+          user_id: string
+        }
+        Update: {
+          company_id?: string | null
+          created_at?: string
+          flag?: string | null
+          full_name?: string
+          id?: string
+          nationality?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "personnel_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
